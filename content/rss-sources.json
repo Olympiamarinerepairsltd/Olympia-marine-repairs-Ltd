@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "label": "Ship & Bunker",
+      "url": "http://feeds.feedburner.com/shipandbunker",
+      "limit": 6,
+      "category": "bunkers",
+      "enabled": true
+    },
+    {
+      "label": "Hellenic Shipping News - replace with exact RSS URL",
+      "url": "https://REPLACE-WITH-EXACT-RSS-URL.xml",
+      "limit": 6,
+      "category": "shipping",
+      "enabled": false
+    },
+    {
+      "label": "NAVCEN / maritime notices - replace with exact RSS URL",
+      "url": "https://REPLACE-WITH-EXACT-RSS-URL.xml",
+      "limit": 4,
+      "category": "notices",
+      "enabled": false
+    }
+  ]
+}

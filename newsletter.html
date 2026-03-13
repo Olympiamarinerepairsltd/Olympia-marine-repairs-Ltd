@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="el" data-page="newsletter">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta.title_newsletter">Olympia Marine Repairs Ltd | Newsletter</title>
+  <meta name="description" content="Μείνετε ενημερωμένοι για τις εξελίξεις στη ναυτιλία και για τα νέα της ομάδας της Olympia Marine Repairs Ltd." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Olympia Marine Repairs Ltd Home">
+        <div class="logo" aria-hidden="true"><img src="logo.png" alt="Olympia Marine Repairs Ltd"></div>
+        <div class="brand-text">
+          <strong>Olympia Marine Repairs Ltd</strong>
+          <small data-i18n="site.tagline">Our expertise. Your safety in every ocean.</small>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="menu">
+          <li><a data-i18n="nav.home" href="index.html">Κεντρική</a></li>
+          <li><a data-i18n="nav.about" href="about.html">Ποιοι είμαστε</a></li>
+          <li><a data-i18n="nav.services" href="services.html">Υπηρεσίες</a></li>
+          <li><a data-i18n="nav.newsletter" href="newsletter.html">Newsletter</a></li>
+          <li><a data-i18n="nav.contact" href="contact.html">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button class="lang-btn" data-lang="el" type="button">ΕΛ</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero newsletter-hero">
+      <div class="container grid-2 newsletter-hero-grid">
+        <div>
+          <span class="section-kicker" data-i18n="newsletter.hero.kicker">Olympia Marine Briefing</span>
+
+          <h1 data-i18n="newsletter.hero.title">
+            Μείνετε ενημερωμένοι για οτιδήποτε αφορά τις εξελίξεις στην ναυτιλία αλλά και για τα νέα της ομάδας μας
+          </h1>
+
+          <p class="lead" data-i18n="newsletter.hero.text">
+            Ο καλύτερος τρόπος ενημέρωσης για να παραμείνετε σε επαφή μαζί μας αλλά και να μαθαίνετε κάθε μήνα και τις σημαντικότερες εξελίξεις.
+          </p>
+
+          <div class="badge-row">
+            <span class="badge">#olympia marine repairs</span>
+            <span class="badge">#maritime</span>
+            <span class="badge">#marinecommunity</span>
+          </div>
+
+          <ul class="checklist checklist-section">
+            <li data-i18n="newsletter.list.1">Έγκυρη ενημέρωση για εξελίξεις στη ναυτιλία</li>
+            <li data-i18n="newsletter.list.2">Ενημέρωση για εταιρικά νέα και εξελίξεις</li>
+            <li data-i18n="newsletter.list.3">Ενημέρωση για τον χώρο της επισκευής καραβιών</li>
+            <li data-i18n="newsletter.list.4">Εξελίξεις από τον κόσμο και τοπικά</li>
+          </ul>
+
+          <div class="newsletter-live-stream">
+            <span class="section-kicker" data-i18n="newsletter.rss.kicker">RSS Feed της Ναυτιλίας</span>
+            <h3 data-i18n="newsletter.rss.title">RSS Feed της Ναυτιλίας</h3>
+            <p class="contact-note" data-i18n="newsletter.rss.text">
+              Παρακάτω εμφανίζονται αυτόματα επιλεγμένες ειδήσεις και εξελίξεις από τον χώρο της διεθνούς ναυτιλίας.
+            </p>
+            <div id="newsletterStream" class="feed-grid"></div>
+          </div>
+        </div>
+
+        <aside class="card newsletter-form-card">
+          <span class="section-kicker" data-i18n="newsletter.form.kicker">Subscribe</span>
+          <h2 data-i18n="newsletter.form.title">Γίνε μέλος σήμερα</h2>
+          <p class="contact-note" data-i18n="newsletter.form.text">
+            Μείνετε ενημερωμένοι, μείνετε συντονισμένοι μαζί μας καταχωρώντας το email σας πιο κάτω.
+          </p>
+
+          <form
+            class="contact-form newsletter-form"
+            id="newsletterForm"
+            action="https://buttondown.com/api/emails/embed-subscribe/olympiamarinerepairsgr"
+            method="post"
+          >
+            <input type="hidden" name="tag" value="website">
+            <input type="hidden" name="tag" value="newsletter">
+            <input type="hidden" name="tag" id="newsletterLangTag" value="lang-el">
+
+            <label for="bd-email" data-i18n="newsletter.form.email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="bd-email"
+              required
+              data-i18n-placeholder="newsletter.form.email_ph"
+              placeholder="name@company.com"
+            >
+
+            <div class="form-actions form-actions-stacked">
+              <button class="btn btn-primary" type="submit" data-i18n="newsletter.form.submit">Εγγραφή</button>
+            </div>
+
+            <p class="form-status" id="newsletterStatus" aria-live="polite"></p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content section-alt">
+      <div class="container">
+        <div class="card cta-card newsletter-promo-card newsletter-app-card">
+          <div class="cta-copy">
+            <span class="section-kicker" data-i18n="newsletter.app.kicker">Mobile app</span>
+            <h2 data-i18n="newsletter.app.title">Olympia Marine Repairs App in Android App Store</h2>
+          </div>
+
+          <div class="newsletter-qr-box">
+            <div class="qr-placeholder">QR CODE</div>
+            <p class="qr-note" data-i18n="newsletter.app.note">olympia marine repairs app</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Olympia Marine Repairs Ltd</small>
+      <small data-i18n="footer.note">Piraeus, Greece • Marine Repairs • 24/7 response on request</small>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const streamMessages = {
+      el: {
+        loading: 'Φόρτωση ενημερώσεων...',
+        empty: 'Δεν υπάρχουν ακόμη διαθέσιμες ενημερώσεις.',
+        loadError: 'Οι ενημερώσεις δεν φορτώθηκαν ακόμη. Ελέγξτε αν υπάρχει το αρχείο content/newsletter-hub.json.',
+        readMore: 'Περισσότερα',
+        rss: 'RSS Feed'
+      },
+      en: {
+        loading: 'Loading updates...',
+        empty: 'No updates are available yet.',
+        loadError: 'Updates could not be loaded yet. Check whether content/newsletter-hub.json exists.',
+        readMore: 'Read more',
+        rss: 'RSS Feed'
+      }
+    };
+
+    function currentLang() {
+      return document.documentElement.lang === 'en' ? 'en' : 'el';
+    }
+
+    function msg(key) {
+      return streamMessages[currentLang()][key];
+    }
+
+    function pickText(value) {
+      if (!value) return '';
+      if (typeof value === 'string') return value;
+      return value[currentLang()] || value.en || value.el || '';
+    }
+
+    function formatDate(isoString) {
+      if (!isoString) return '';
+      try {
+        return new Date(isoString).toLocaleDateString(
+          currentLang() === 'el' ? 'el-GR' : 'en-GB',
+          { year: 'numeric', month: 'short', day: 'numeric' }
+        );
+      } catch (e) {
+        return isoString;
+      }
+    }
+
+    function renderNewsletterStream(items) {
+      const container = document.getElementById('newsletterStream');
+      if (!container) return;
+
+      if (!items || !items.length) {
+        container.innerHTML = '<div class="feed-card"><p class="feed-summary">' + msg('empty') + '</p></div>';
+        return;
+      }
+
+      container.innerHTML = items.map(item => {
+        const title = pickText(item.title);
+        const summary = pickText(item.summary);
+        const publishedAt = formatDate(item.publishedAt);
+        const source = item.sourceLabel || '';
+        const url = item.url || '#';
+
+        return `
+          <article class="feed-card">
+            <div class="feed-meta">
+              <span class="feed-type">${msg('rss')}</span>
+              <span>${source}</span>
+              <span>${publishedAt}</span>
+            </div>
+            <h3 class="feed-title">${title}</h3>
+            <p class="feed-summary">${summary}</p>
+            <a class="contact-link feed-link" href="${url}" target="_blank" rel="noopener">${msg('readMore')}</a>
+          </article>
+        `;
+      }).join('');
+    }
+
+    async function loadNewsletterHub() {
+      const container = document.getElementById('newsletterStream');
+      if (!container) return;
+
+      container.innerHTML = '<div class="feed-card"><p class="feed-summary">' + msg('loading') + '</p></div>';
+
+      try {
+        const response = await fetch('content/newsletter-hub.json?ts=' + Date.now(), { cache: 'no-store' });
+        if (!response.ok) throw new Error('Hub not found');
+
+        const data = await response.json();
+        const items = Array.isArray(data.items) ? data.items.slice(0, 6) : [];
+
+        renderNewsletterStream(items);
+      } catch (error) {
+        container.innerHTML = '<div class="feed-card"><p class="feed-summary">' + msg('loadError') + '</p></div>';
+      }
+    }
+
+    function updateLanguageTag() {
+      const langTag = document.getElementById('newsletterLangTag');
+      if (!langTag) return;
+      langTag.value = currentLang() === 'en' ? 'lang-en' : 'lang-el';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLanguageTag();
+      loadNewsletterHub();
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setTimeout(() => {
+            updateLanguageTag();
+            loadNewsletterHub();
+          }, 20);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

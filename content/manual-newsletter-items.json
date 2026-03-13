@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "omr-001",
+      "date": "2026-03-10T08:00:00Z",
+      "sourceLabel": "Olympia Marine Repairs Ltd",
+      "category": "company",
+      "url": "https://buttondown.com/api/emails/embed-subscribe/olympiamarinerepairsgr"",
+      "featured": true,
+      "title": {
+        "el": "Άμεση τεχνική ανταπόκριση για voyage repairs και drydock support",
+        "en": "Fast technical response for voyage repairs and drydock support"
+      },
+      "summary": {
+        "el": "Η ομάδα μας οργανώνει τεχνική κινητοποίηση, επικοινωνία έργου και υποστήριξη για operators, managers και ιδιώτες με βάση τον Πειραιά.",
+        "en": "Our team organizes technical mobilization, project communication and support for operators, managers and private clients from Piraeus."
+      }
+    },
+    {
+      "id": "omr-002",
+      "date": "2026-03-08T10:30:00Z",
+      "sourceLabel": "Olympia Marine Repairs Ltd",
+      "category": "insight",
+      "url": "https://buttondown.com/api/emails/embed-subscribe/olympiamarinerepairsgr"",
+      "featured": false,
+      "title": {
+        "el": "Γιατί η σωστή τεχνική αναφορά μειώνει καθυστερήσεις και ασάφεια",
+        "en": "Why structured technical reporting reduces delays and ambiguity"
+      },
+      "summary": {
+        "el": "Το newsletter μπορεί να δείχνει εμπειρία μέσα από reporting discipline, progress updates και πρακτικά operational insights αντί για γενική διαφήμιση.",
+        "en": "The newsletter can showcase expertise through reporting discipline, progress updates and practical operational insights instead of generic promotion."
+      }
+    }
+  ]
+}

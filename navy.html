@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Olympia Marine Repairs LTD | Επισκευές Καραβιών • Πειραιάς & Διεθνώς</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <meta name="description" content="B2B υπηρεσίες επισκευής και συντήρησης πλοίων. Παράρτημα Πειραιά, κεντρικά γραφεία στο εξωτερικό, παρουσία παγκοσμίως." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#0b5fff;        /* Κύριο μπλε */
+      --brand-dark:#0848bf;   /* Σκούρο μπλε */
+      --bg:#0b1220;           /* Σκούρο background */
+      --card:#121a2b;         /* Κάρτες */
+      --txt:#e9eef7;          /* Κείμενο */
+      --muted:#a8b3c7;        /* Δευτερεύον */
+      --accent:#00d4ff;       /* Τονισμός */
+      --ok:#2ecc71;           /* Επιτυχία */
+      --warning:#f1c40f;      /* Προειδοποίηση */
+      --danger:#e74c3c;       /* Σφάλμα */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);scroll-behavior:smooth}
+
+    /* Layout */
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--txt)}
+    .brand .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;box-shadow:var(--shadow)}
+    .brand .logo span{font-weight:800}
+    .brand h1{font-size:18px;margin:0;line-height:1.1}
+
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--txt);text-decoration:none;padding:10px 12px;border-radius:10px;transition:all .2s}
+    nav a:hover{background:rgba(255,255,255,.06)}
+
+    .lang-switch{display:flex;gap:8px;align-items:center}
+    .lang-btn{border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--txt);padding:8px 12px;border-radius:10px;cursor:pointer}
+    .lang-btn.active{background:var(--brand);border-color:var(--brand-dark)}
+
+    /* Hero */
+    .hero{position:relative;min-height:72vh;display:grid;align-items:center}
+    .hero .wrap{display:grid;gap:22px;grid-template-columns:1.2fr .8fr}
+    .hero h2{font-size:42px;margin:0}
+    .hero p{color:var(--muted);font-size:18px;margin:0}
+    .hero .cta{display:flex;gap:12px;margin-top:8px}
+    .btn{appearance:none;border:none;border-radius:14px;padding:14px 18px;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--brand);color:white;box-shadow:var(--shadow)}
+    .btn-primary:hover{background:var(--brand-dark)}
+    .btn-secondary{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}
+
+    .badge-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+    .badge{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:8px 12px;font-size:13px;color:var(--muted)}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* Sections */
+    section{padding:70px 0}
+    section h3{font-size:28px;margin:0 0 10px}
+    section p.lead{color:var(--muted);margin:0 0 24px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+    .service{padding:20px}
+    .service h4{margin:0 0 8px}
+    .service p{color:var(--muted);margin:0}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    form{display:grid;gap:12px}
+    input,textarea{background:#0b1325;border:1px solid rgba(255,255,255,.12);color:var(--txt);border-radius:12px;padding:12px}
+    textarea{min-height:120px}
+
+    .offices{display:grid;gap:12px}
+    .office{padding:16px}
+    .office small{color:var(--muted)}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:22px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero .wrap{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Olympia Marine Repairs LTD Home">
+        <div class="logo"><span>OMR</span></div>
+        <div>
+          <h1>Olympia Marine Repairs LTD</h1>
+          <small data-i18n="tagline">Ship Repair • Piraeus & Global</small>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home" data-i18n="nav.home">Κεντρική</a></li>
+          <li><a href="#about" data-i18n="nav.about">Ποιοι είμαστε</a></li>
+          <li><a href="#services" data-i18n="nav.services">Υπηρεσίες</a></li>
+          <li><a data-i18n="nav.newsletter" href="newsletter.html">Newsletter</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button class="lang-btn active" data-lang="el">ΕΛ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Home -->
+  <main id="home" class="hero">
+    <div class="container wrap">
+      <div>
+        <h2 data-i18n="hero.title">Εξειδικευμένες επισκευές πλοίων, με αξιοπιστία ναυπηγείου.</h2>
+        <p class="lead" data-i18n="hero.subtitle">Παράρτημα Πειραιά, κεντρικά στο εξωτερικό και δίκτυο συνεργείων σε κύρια λιμάνια παγκοσμίως.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact" data-i18n="hero.cta_primary">Ζητήστε προσφορά</a>
+          <a class="btn btn-secondary" href="#services" data-i18n="hero.cta_secondary">Δείτε υπηρεσίες</a>
+        </div>
+        <div class="badge-row">
+          <span class="badge" data-i18n="hero.badge1">24/7 Response</span>
+          <span class="badge" data-i18n="hero.badge2">Class-Compliant</span>
+          <span class="badge" data-i18n="hero.badge3">Riding Teams</span>
+          <span class="badge" data-i18n="hero.badge4">OEM Partnerships</span>
+        </div>
+      </div>
+      <div class="card" style="aspect-ratio:16/10; overflow:hidden; display:grid; place-items:center">
+        <!-- TODO: Προσθέστε δική σας φωτογραφία hero (π.χ. δεξαμενόπλοιο/ναυπηγείο) -->
+        <svg width="100%" height="100%" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#0b5fff"/>
+              <stop offset="1" stop-color="#00d4ff"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="380" fill="#0b1325"/>
+          <g opacity=".25">
+            <circle cx="90" cy="60" r="120" fill="url(#g)"/>
+            <circle cx="540" cy="320" r="160" fill="url(#g)"/>
+          </g>
+          <text x="50%" y="50%" fill="#e9eef7" font-size="22" font-family="Inter" text-anchor="middle">[ Προσθέστε εικόνα hero ]</text>
+        </svg>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h3 data-i18n="about.title">Ποιοι είμαστε</h3>
+      <p class="lead" data-i18n="about.lead">Σύντομη περιγραφή εταιρείας, ιστορία, πιστοποιήσεις, αξίες και δέσμευση στην ασφάλεια & ποιότητα.</p>
+      <div class="grid-3">
+        <div class="card service">
+          <h4 data-i18n="about.card1.title">Παράρτημα Πειραιά</h4>
+          <p data-i18n="about.card1.text">Διαχείριση έργων, κινητές ομάδες, άμεση πρόσβαση σε προμηθευτές & ναυπηγεία.</p>
+        </div>
+        <div class="card service">
+          <h4 data-i18n="about.card2.title">Κεντρικά Γραφεία</h4>
+          <p data-i18n="about.card2.text">Στρατηγικός σχεδιασμός, procurement, διοίκηση διεθνών έργων.</p>
+        </div>
+        <div class="card service">
+          <h4 data-i18n="about.card3.title">Παγκόσμια Παρουσία</h4>
+          <p data-i18n="about.card3.text">Δίκτυο συνεργατών σε κύριους λιμένες Ευρώπης, MEA, Ασίας & Αμερικής.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h3 data-i18n="services.title">Υπηρεσίες</h3>
+      <p class="lead" data-i18n="services.lead">Ενδεικτικές εργασίες επισκευής & συντήρησης για στόλους εμπορικών και επιβατικών πλοίων.</p>
+      <div class="grid-3">
+        <div class="card service">
+          <h4 data-i18n="services.s1.title">Μηχανικά / Ηλεκτρομηχανικά</h4>
+          <p data-i18n="services.s1.text">Main & aux engines, shafting, pumps, valves, steering gear, boiler repairs.</p>
+        </div>
+        <div class="card service">
+          <h4 data-i18n="services.s2.title">Hull & Steel Works</h4>
+          <p data-i18n="services.s2.text">Κατασκευή/αντικατάσταση ελασμάτων, δεξαμενισμοί, sandblasting & coatings.</p>
+        </div>
+        <div class="card service">
+          <h4 data-i18n="services.s3.title">Electrical & Automation</h4>
+          <p data-i18n="services.s3.text">Switchboards, generators, PLC/automation, alarm & monitoring, retrofits.</p>
+        </div>
+        <div class="card service">
+          <h4 data-i18n="services.s4.title">Συστήματα Περιβάλλοντος</h4>
+          <p data-i18n="services.s4.text">BWTS, scrubbers, NOx/SOx compliance, calibration & commissioning.</p>
+        </div>
+        <div class="card service">
+          <h4 data-i18n="services.s5.title">Afloat Repairs</h4>
+          <p data-i18n="services.s5.text">Riding teams εν πλω, emergency attendance, worldwide rapid response.</p>
+        </div>
+        <div class="card service">
+          <h4 data-i18n="services.s6.title">Προμήθειες / OEM</h4>
+          <p data-i18n="services.s6.text">Γνήσια ανταλλακτικά, logistics, ποιότητα & ιχνηλασιμότητα.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h3 data-i18n="contact.title">Επικοινωνία</h3>
+      <p class="lead" data-i18n="contact.lead">Επικοινωνήστε για τεχνική αξιολόγηση, προσφορά ή άμεση ανταπόκριση 24/7.</p>
+
+      <div class="contact">
+        <!-- FORM: (μη λειτουργική υποβολή — backend αργότερα) -->
+        <form class="card" onsubmit="event.preventDefault(); alert(i18n.t('contact.toast'));">
+          <div class="container" style="padding:18px 18px 6px">
+            <div class="grid-2">
+              <label>
+                <span data-i18n="contact.form.company">Εταιρεία</span>
+                <input required placeholder="ACME Shipping S.A." />
+              </label>
+              <label>
+                <span data-i18n="contact.form.name">Ονοματεπώνυμο</span>
+                <input required placeholder="Πλήρες όνομα" />
+              </label>
+            </div>
+            <div class="grid-2">
+              <label>
+                <span data-i18n="contact.form.email">Email</span>
+                <input type="email" required placeholder="name@company.com" />
+              </label>
+              <label>
+                <span data-i18n="contact.form.phone">Τηλέφωνο</span>
+                <input placeholder="+30 ..." />
+              </label>
+            </div>
+            <label>
+              <span data-i18n="contact.form.message">Μήνυμα</span>
+              <textarea placeholder="Σύντομη περιγραφή ανάγκης / πλοίου / λιμένα"></textarea>
+            </label>
+            <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:8px">
+              <small style="color:var(--muted)" data-i18n="contact.privacy">Με την υποβολή αποδέχεστε τους όρους απορρήτου μας.</small>
+              <button class="btn btn-primary" type="submit" data-i18n="contact.form.submit">Αποστολή</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Offices / Info -->
+        <div class="offices">
+          <div class="card office">
+            <h4 data-i18n="contact.piraeus.title">Παράρτημα Πειραιά</h4>
+            <p>
+              <span data-i18n="contact.piraeus.addr">Ενδεικτική Διεύθυνση, Πειραιάς 185 31, Ελλάδα</span><br />
+              <small>+30 210 000 0000 • <a href="mailto:info@navisrepair.com">info@navisrepair.com</a></small>
+            </p>
+          </div>
+          <div class="card office">
+            <h4 data-i18n="contact.hq.title">Κεντρικά Γραφεία</h4>
+            <p>
+              <span data-i18n="contact.hq.addr">HQ Address, City, Country</span><br />
+              <small>+00 000 000 000 • <a href="mailto:hq@navisrepair.com">hq@navisrepair.com</a></small>
+            </p>
+          </div>
+          <div class="card office">
+            <h4 data-i18n="contact.ops.title">24/7 Operations</h4>
+            <p>
+              <span data-i18n="contact.ops.text">Επείγουσες βλάβες και τεχνικές παρουσίες παγκοσμίως.</span><br />
+              <small>ops@navisrepair.com</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <small>© <span id="year"></span> Olympia Marine Repairs LTD</small>
+      <small data-i18n="footer.note">Πιστοποίηση ISO 9001/14001 • GDPR-ready • Cookies minimal</small>
+    </div>
+  </footer>
+
+  <!-- JSON-LD: Οργανισμός για SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Olympia Marine Repairs LTD",
+    "url": "https://example.com",
+    "logo": "https://example.com/logo.png",
+    "description": "Ship repair & maintenance services. Piraeus branch, global coverage.",
+    "sameAs": [
+      "https://www.linkedin.com/company/example",
+      "https://www.facebook.com/example"
+    ],
+    "address": [{
+      "@type":"PostalAddress",
+      "addressLocality":"Πειραιάς",
+      "addressCountry":"GR",
+      "streetAddress":"Ενδεικτική Διεύθυνση",
+      "postalCode":"18531"
+    }]
+  }
+  </script>
+
+  <!-- Διγλωσσία / Μικρή βιβλιοθήκη i18n -->
+  <script>
+    const i18n = {
+      current: 'el',
+      dict: {
+        el: {
+          tagline: 'Ship Repair • Πειραιάς & Παγκοσμίως',
+          'nav.home':'Κεντρική','nav.about':'Ποιοι είμαστε','nav.services':'Υπηρεσίες','nav.contact':'Επικοινωνία',
+          'hero.title':'Εξειδικευμένες επισκευές πλοίων, με αξιοπιστία ναυπηγείου.',
+          'hero.subtitle':'Παράρτημα Πειραιά, κεντρικά στο εξωτερικό και δίκτυο συνεργείων σε κύρια λιμάνια παγκοσμίως.',
+          'hero.cta_primary':'Ζητήστε προσφορά','hero.cta_secondary':'Δείτε υπηρεσίες',
+          'hero.badge1':'24/7 Response','hero.badge2':'Class-Compliant','hero.badge3':'Riding Teams','hero.badge4':'OEM Partnerships',
+          'about.title':'Ποιοι είμαστε','about.lead':'Σύντομη περιγραφή εταιρείας, ιστορία, πιστοποιήσεις, αξίες και δέσμευση στην ασφάλεια & ποιότητα.',
+          'about.card1.title':'Παράρτημα Πειραιά','about.card1.text':'Διαχείριση έργων, κινητές ομάδες, άμεση πρόσβαση σε προμηθευτές & ναυπηγεία.',
+          'about.card2.title':'Κεντρικά Γραφεία','about.card2.text':'Στρατηγικός σχεδιασμός, procurement, διοίκηση διεθνών έργων.',
+          'about.card3.title':'Παγκόσμια Παρουσία','about.card3.text':'Δίκτυο συνεργατών σε κύριους λιμένες Ευρώπης, MEA, Ασίας & Αμερικής.',
+          'services.title':'Υπηρεσίες','services.lead':'Ενδεικτικές εργασίες επισκευής & συντήρησης για στόλους εμπορικών και επιβατικών πλοίων.',
+          'services.s1.title':'Μηχανικά / Ηλεκτρομηχανικά','services.s1.text':'Main & aux engines, shafting, pumps, valves, steering gear, boiler repairs.',
+          'services.s2.title':'Hull & Steel Works','services.s2.text':'Κατασκευή/αντικατάσταση ελασμάτων, δεξαμενισμοί, sandblasting & coatings.',
+          'services.s3.title':'Electrical & Automation','services.s3.text':'Switchboards, generators, PLC/automation, alarm & monitoring, retrofits.',
+          'services.s4.title':'Συστήματα Περιβάλλοντος','services.s4.text':'BWTS, scrubbers, NOx/SOx compliance, calibration & commissioning.',
+          'services.s5.title':'Afloat Repairs','services.s5.text':'Riding teams εν πλω, emergency attendance, worldwide rapid response.',
+          'services.s6.title':'Προμήθειες / OEM','services.s6.text':'Γνήσια ανταλλακτικά, logistics, ποιότητα & ιχνηλασιμότητα.',
+          'contact.title':'Επικοινωνία','contact.lead':'Επικοινωνήστε για τεχνική αξιολόγηση, προσφορά ή άμεση ανταπόκριση 24/7.',
+          'contact.form.company':'Εταιρεία','contact.form.name':'Ονοματεπώνυμο','contact.form.email':'Email','contact.form.phone':'Τηλέφωνο','contact.form.message':'Μήνυμα','contact.form.submit':'Αποστολή',
+          'contact.piraeus.title':'Παράρτημα Πειραιά','contact.piraeus.addr':'Ενδεικτική Διεύθυνση, Πειραιάς 185 31, Ελλάδα',
+          'contact.hq.title':'Κεντρικά Γραφεία','contact.hq.addr':'HQ Address, City, Country',
+          'contact.ops.title':'24/7 Operations','contact.ops.text':'Επείγουσες βλάβες και τεχνικές παρουσίες παγκοσμίως.',
+          'contact.toast':'Ευχαριστούμε! Θα επικοινωνήσουμε σύντομα. (Demo φόρμας).',
+          'footer.note':'Πιστοποίηση ISO 9001/14001 • GDPR-ready • Cookies minimal'
+        },
+        en: {
+          tagline: 'Ship Repair • Piraeus & Worldwide',
+          'nav.home':'Home','nav.about':'About','nav.services':'Services','nav.contact':'Contact',
+          'hero.title':'Specialized ship repairs with shipyard-grade reliability.',
+          'hero.subtitle':'Piraeus branch, HQ abroad and rider teams at major ports worldwide.',
+          'hero.cta_primary':'Request a quote','hero.cta_secondary':'View services',
+          'hero.badge1':'24/7 Response','hero.badge2':'Class-Compliant','hero.badge3':'Riding Teams','hero.badge4':'OEM Partnerships',
+          'about.title':'Who we are','about.lead':'Short company profile, history, certifications, values and commitment to safety & quality.',
+          'about.card1.title':'Piraeus Branch','about.card1.text':'Project management, mobile teams, immediate access to suppliers & shipyards.',
+          'about.card2.title':'Headquarters','about.card2.text':'Strategic planning, procurement, global project administration.',
+          'about.card3.title':'Global Footprint','about.card3.text':'Partner network at major ports in Europe, MEA, Asia & the Americas.',
+          'services.title':'Services','services.lead':'Indicative repair & maintenance works for merchant and passenger fleets.',
+          'services.s1.title':'Mechanical / E-Machinery','services.s1.text':'Main & aux engines, shafting, pumps, valves, steering gear, boiler repairs.',
+          'services.s2.title':'Hull & Steel Works','services.s2.text':'Plating renewals, dry-docking, sandblasting & coatings.',
+          'services.s3.title':'Electrical & Automation','services.s3.text':'Switchboards, generators, PLC/automation, alarm & monitoring, retrofits.',
+          'services.s4.title':'Environmental Systems','services.s4.text':'BWTS, scrubbers, NOx/SOx compliance, calibration & commissioning.',
+          'services.s5.title':'Afloat Repairs','services.s5.text':'Riding teams at sea, emergency attendance, worldwide rapid response.',
+          'services.s6.title':'Procurement / OEM','services.s6.text':'Genuine spares, logistics, quality & traceability.',
+          'contact.title':'Contact','contact.lead':'Reach out for a technical assessment, quotation or immediate 24/7 attendance.',
+          'contact.form.company':'Company','contact.form.name':'Full name','contact.form.email':'Email','contact.form.phone':'Phone','contact.form.message':'Message','contact.form.submit':'Send',
+          'contact.piraeus.title':'Piraeus Branch','contact.piraeus.addr':'Sample Address, Piraeus 185 31, Greece',
+          'contact.hq.title':'Headquarters','contact.hq.addr':'HQ Address, City, Country',
+          'contact.ops.title':'24/7 Operations','contact.ops.text':'Emergency breakdowns and worldwide technical attendance.',
+          'contact.toast':'Thank you! We will contact you shortly. (Form demo).',
+          'footer.note':'ISO 9001/14001 • GDPR-ready • Minimal cookies'
+        }
+      },
+      t(key){ return this.dict[this.current][key] || key; },
+      set(lang){
+        this.current = lang;
+        localStorage.setItem('lang', lang);
+        for(const el of document.querySelectorAll('[data-i18n]')){
+          const key = el.getAttribute('data-i18n');
+          el.textContent = this.t(key);
+        }
+        document.documentElement.lang = lang;
+        document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+      }
+    };
+
+    // Init
+    const saved = localStorage.getItem('lang');
+    i18n.set(saved || (navigator.language?.startsWith('el') ? 'el' : 'en'));
+
+    // Bindings
+    document.querySelectorAll('.lang-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=> i18n.set(btn.dataset.lang));
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
